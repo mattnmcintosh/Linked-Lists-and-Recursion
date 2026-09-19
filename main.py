@@ -1,26 +1,36 @@
 from linked_list import LinkedList
 
 if __name__ == "__main__":
-    """
-    Use this file to create a LinkedList instance and perform operations 
-    like insertion, recursion-based sum, search, and reverse.
-    """
+    print("=== Linked List Recursive Operations Demo ===\n")
 
-    # TODO: 1) Create a LinkedList instance
+    # 1. Initialize and create the linked list with integer IDs
+    my_list = LinkedList()
+    initial_ids = [10, 25, 42, 7, 19]
     
+    print(f"Loading initial IDs into the list: {initial_ids}")
+    for item in initial_ids:
+        my_list.insert_at_end(item)
 
-    # TODO: 2) Insert some sample data using insert_at_front or insert_at_end
-    
-    # TODO: 3) Display the list to verify insertion
-    
+    print(f"Current Linked List: {my_list.display()}\n")
 
-    # TODO: 4) Call recursive_sum and print the result
-    
+    # 2. Sum all node data using recursion
+    total_sum = my_list.recursive_sum()
+    print(f"-> Sum of all ID data: {total_sum}\n")
 
-    # TODO: 5) Call recursive_search with a target and print result
+    # 3. Search for IDs using recursion
+    search_target_yes = 42
+    search_target_no = 99
     
+    found_yes = my_list.recursive_search(search_target_yes)
+    found_no = my_list.recursive_search(search_target_no)
+    
+    print(f"-> Searching for ID {search_target_yes}: {'Found!' if found_yes else 'Not Found.'}")
+    print(f"-> Searching for ID {search_target_no}: {'Found!' if found_no else 'Not Found.'}\n")
 
-    # TODO: 6) Call recursive_reverse, then display the reversed list
+    # 4. Reverse the list in-place using recursion
+    print("Reversing the linked list in-place...")
+    my_list.recursive_reverse()
+    print(f"-> Reversed Linked List: {my_list.display()}")
     
 
 
